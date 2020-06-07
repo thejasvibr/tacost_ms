@@ -8,7 +8,7 @@ tags:
   - acoustic tracking
 authors:
   - name: Thejasvi Beleyur
-    orcid: 0000-1000-0872-7098
+    orcid: 0000-0001-5360-4383
     affiliation: "1"
 
 affiliations:
