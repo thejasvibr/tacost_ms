@@ -1,5 +1,5 @@
 ---
-title: `tacost: Test and simulate the accuracy of acoustic tracking systems'
+title: 'tacost: Test and simulate the accuracy of acoustic tracking systems'
 tags:
   - Python
   - acoustics
