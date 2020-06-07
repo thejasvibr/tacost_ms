@@ -1,5 +1,5 @@
 ---
-title: TACOST: Test and simulate the accuracy of acoustic tracking systems
+title: `tacost: Test and simulate the accuracy of acoustic tracking systems'
 tags:
   - Python
   - acoustics
@@ -8,7 +8,7 @@ tags:
   - acoustic tracking
 authors:
   - name: Thejasvi Beleyur
-    orcid: 
+    orcid: 0000-1000-0872-7098
     affiliation: "1"
 
 affiliations:
@@ -19,7 +19,7 @@ bibliography: references.bib
 ---
 
 # Introduction
-Acoustic tracking is a common method used to study vocalising animals such as birds and echolocating animals like bats and cetaceans [@suzuki2017harkbird,]
+Acoustic tracking is a common method used to study vocalising animals such as birds and echolocating animals like bats and cetaceans [@suzuki2017harkbird]
 
 
 # Motivation
