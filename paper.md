@@ -19,7 +19,7 @@ bibliography: references.bib
 ---
 
 # Introduction
-Acoustic tracking is a common method used to study vocalising animals such as birds and echolocating animals like bats and cetaceans [@suzuki2017harkbird;aubauer1996acoustical;mohl2000sperm;Goerlitz2010;Hugel2017].
+Acoustic tracking is a common method used to study vocalising animals such as birds and echolocating animals like bats and cetaceans [@suzuki2017harkbird;@aubauer1996acoustical;@mohl2000sperm;@Goerlitz2010;@Hugel2017].
 
 The localisation accuracy of an acoustic tracking system depends on a variety  of what I define as 'internal' and 'external' factors. Internal factors include aspects such as microphone array geometry,
 localisation algorithms to detect signals of interest and the mathematical formulations used to localise sounds once the signals have been detected (time-of-arrival, time-of-arrival-difference) `REFS`. External 
@@ -36,7 +36,7 @@ benefit from bug discoveries much faster than in-house or one-time use scripts `
 and developer friendly documentation [hosted online](https://tacost.readthedocs.io/en/latest/) and in the code itself. `tacost` contributes to the 
 Python scientific ecosystem and hopes to promote the growth of acoustics and bioacoustic research in open-source languages like Python. 
 
-The design of `tacost` focusses on a reproducible and user-friendly method @[Wilson2012] to generate WAV files that form the input for acoustic tracking softwares. Users may interact with `tacost` through custom-written Python scripts
+The design of `tacost` focusses on a reproducible and user-friendly method [@Wilson2012] to generate WAV files that form the input for acoustic tracking softwares. Users may interact with `tacost` through custom-written Python scripts
 by calling it as a Python package with ```import tacost``` or in the 'no-coding' mode. The 'no-coding' mode is based around a parameter file which is used to specify various parts of the actual simulated WAV file to be created.
 Through the parameter file the user can define the emitted sound, positions, inter-sound-intervals, sampling rate and other relevant variables to customise the output WAV file. 
 
@@ -47,12 +47,17 @@ Through the parameter file the user can define the emitted sound, positions, int
 pip install tacost
 ```
 
-or by cloning the source repository (see repository hyperlink in paper), navigating to the repository and installing the package with ```pip install .```. 
+or by cloning the source repository (see repository hyperlink in paper), navigating to the repository and installing the package with ```pip install .``` 
 
 # Examples 
 
 ## Using `tacost` in a custom-written script
 In this example, a 4-channel array is tested 
+
+
+## Using `tacost` through the parameter file
+
+
 
 # Acknowledgements
 This work was supported by a doctoral fellowship from the German Academic Exchange Service (DAAD) and the International Max Planck Research School for Organismal Biology. 
