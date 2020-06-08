@@ -55,18 +55,18 @@ software package that localises sounds using the time-of-arrival-differences acr
 for the tristar60 microphone array. It can be seen that localisation accuracy drops with radial distance from the array, and that there is a SOMETHINGSEOMTHINGSEOMTHING. It must be kept in mind that the resulting outputs are a combined output of multiple factors, and not 
 only the result of the microphone array geometry. 
 
+![Localisation accuracy of a tristar60 array localised with time-of-arrival-differences. \label{Figure 1}](figure_1.png)
 
 
 ### Localisation accuracy of a multi-microphone array in the field 
 While recording in the field, it may be difficult to use fixed arrays mounted on stands. These arrays are difficult to carry and may also influence the behaviour of the animals themselves. It is advantageous to 
 use less obtrusive micorphone geometries, for instance where the microphones are placed on the walls of a cave or on trees. These microphone geometries are flexible, but their localisation accuracy is hard to 
-characterise analytically. `tacost` is an ideal tool for such situations. Figure 2 shows the microphone array geometry and recording system described in [@Batstone2019].In short, the array consisted of 12 microphones, 4 of them on a 120cm tristar, and 
+characterise analytically. `tacost` is an ideal tool for such situations. \autoref{Figure 2} shows the microphone array geometry and recording system described in [@Batstone2019].In short, the array consisted of 12 microphones, 4 of them on a 120cm tristar, and 
 the remaining 8 microphones attached to the walls of a cave. A series of sound emission points were created simulating the volume that echolocating bats flew within. The simulated sound was set to 
 a linear sweep, which mimicked that of a bat call. The `tacost` output WAV files were analysed with the TOADSuite. The resulting accuracy map reveals that overall, the SOMETHINGSEOMTHINGSEOMTHING SOMETHINGSEOMTHINGSEOMTHING 
 SOMETHINGSEOMTHINGSEOMTHING
 
-# Figures 
-![Localisation accuracy of a tristar60 array localised with time-of-arrival-differences. \label{Figure 1}](figure_1.png)
+![Localisation accuracy of a multi-microphone array in the field, localised with time-of-arrival-differences. \label{Figure 2}](figure_2.png)
 
 
 # Acknowledgements
