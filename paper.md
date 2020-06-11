@@ -67,7 +67,7 @@ SOMETHINGSEOMTHINGSEOMTHING
 
 ![Localisation accuracy of a multi-microphone array in the field, localised with time-of-arrival-differences. A) The line-connected points (blue) represent the microphone array consisting of 11 microphones. Four microphones are in a tristar 120 array (tristar array with 120cm radial distance from central mic), and 
 the remaining 7 mics are placed on the walls of the cave. The free-standing points (orange) are  the simulated emission points which form a 'calibration grid' B) The distribution of localisation error. The error is 
-the euclidean distance between the predicted and simulated point. The localisation error is between 0.07-0.32 m for the given points. \label{Figure 2}](analysis/fig2_points_and_error.png)
+the euclidean distance between the predicted and simulated point. The localisation error is between 0.07-0.32 m for the given points. \label{Figure 2}](data_for_figures/analysis/fig2_points_and_error.png)
 
 
 # Acknowledgements
