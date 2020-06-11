@@ -53,7 +53,7 @@ software package that localises sounds using the time-of-arrival-differences acr
 for the tristar60 microphone array. It can be seen that localisation accuracy drops with radial distance from the array, and that there is a SOMETHINGSEOMTHINGSEOMTHING. It must be kept in mind that the resulting outputs are a combined output of multiple factors, and not 
 only the result of the microphone array geometry. 
 
-![Localisation accuracy of a tristar60 array localised with time-of-arrival-differences. \label{Figure 1}](data_for_figures/tristar_example.png)
+![Localisation accuracy of a tristar60 array localised with time-of-arrival-differences. The line-connected points (blue) represent the tristar60 microphone array, while the free-standing points (orange) are  the simulated emission points which form a 'calibration grid' \label{Figure 1}](data_for_figures/tristar_example.png)
 
 
 ## Localisation accuracy of a multi-microphone array in the field 
@@ -65,7 +65,9 @@ a linear sweep, which mimicked that of a bat call. The `tacost` output WAV files
 and 2) type of signal. The resulting accuracy map reveals that overall, the SOMETHINGSEOMTHINGSEOMTHING SOMETHINGSEOMTHINGSEOMTHING 
 SOMETHINGSEOMTHINGSEOMTHING
 
-![Localisation accuracy of a multi-microphone array in the field, localised with time-of-arrival-differences. \label{Figure 2}](data_for_figures/cave_example.png)
+![Localisation accuracy of a multi-microphone array in the field, localised with time-of-arrival-differences. A) The line-connected points (blue) represent the microphone array consisting of 11 microphones. Four microphones are in a tristar 120 array (tristar array with 120cm radial distance from central mic), and 
+the remaining 7 mics are placed on the walls of the cave. The free-standing points (orange) are  the simulated emission points which form a 'calibration grid' B) The distribution of localisation error. The error is 
+the euclidean distance between the predicted and simulated point. The localisation error is between 0.07-0.32 m for the given points. \label{Figure 2}](analysis/fig2_points_and_error.png)
 
 
 # Acknowledgements
