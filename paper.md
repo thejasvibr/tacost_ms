@@ -53,7 +53,8 @@ software package that localises sounds using the time-of-arrival-differences acr
 for the tristar60 microphone array. It can be seen that localisation accuracy drops with radial distance from the array, and that there is a SOMETHINGSEOMTHINGSEOMTHING. It must be kept in mind that the resulting outputs are a combined output of multiple factors, and not 
 only the result of the microphone array geometry. 
 
-![Localisation accuracy of a tristar60 array localised with time-of-arrival-differences. The line-connected points (blue) represent the tristar60 microphone array, while the free-standing points (orange) are  the simulated emission points which form a 'calibration grid' \label{Figure 1}](data_for_figures/tristar_example.png)
+![Localisation accuracy of a tristar60 array localised with time-of-arrival-differences. A) The line-connected points (blue) represent the tristar60 microphone array,
+ while the free-standing points (orange) are  the simulated emission points which form a 'calibration grid' B) The localisation error increases with increasing radial distance of source from the central microphone. The error's range between 0-14m.\label{Figure 1}](data_for_figures/analysis/fig1_points_and_error.png)
 
 
 ## Localisation accuracy of a multi-microphone array in the field 

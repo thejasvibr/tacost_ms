@@ -19,6 +19,9 @@ from mpl_toolkits.mplot3d import Axes3D
 import numpy as np 
 import pandas as pd
 import scipy.spatial
+import tacost
+from tacost.calculate_toa import standard_tristar
+
 
 def calculate_euclidean_error(row_xyz):
     '''
@@ -48,12 +51,30 @@ toadsuite_points = toadsuite_xyz.to_numpy()
 tristar_diff = np.abs(tristar_points_part - toadsuite_points)
 tristar_euclidean_error = np.apply_along_axis(calculate_euclidean_error, 1, tristar_diff)
 
-norm_error = tristar_euclidean_error/np.min(tristar_euclidean_error)
-norm_error += 0.1
+points_and_error = np.column_stack((tristar_points_part, tristar_euclidean_error))
 
-plt.figure()
-plt.hist(tristar_euclidean_error, bins=np.arange(0,15,0.5), density=True)
 
+trist_norm_error = (tristar_euclidean_error+0.01)/(np.min(tristar_euclidean_error)+0.01)
+
+plt.figure(figsize=(10,4))
+ax0 = plt.subplot(121,projection='3d')
+ax0.view_init(elev=32., azim=-62)
+ax0.scatter(tristar_points_part[:,0], tristar_points_part[:,1], tristar_points_part[:,2],
+                                                '*', s=trist_norm_error*0.2)
+ax0.scatter(standard_tristar[:,0],standard_tristar[:,1],standard_tristar[:,2],marker=11)
+draw_mic_array(standard_tristar, ax0)
+ax0.text2D(0.1, 0.9, "A", transform=ax0.transAxes, fontsize=15)
+plt.tight_layout()
+
+dist_from_central_mic = [scipy.spatial.distance.euclidean(each, [0,0,0]) for each in tristar_points_part]
+# radial distance - error plot 
+ax12 = plt.subplot(122)
+plt.plot(dist_from_central_mic, points_and_error[:,-1],'*')
+plt.ylabel('Error, m', fontsize=12);plt.xlabel('Point distance from central mic, m', fontsize=12)
+plt.xticks(fontsize=10);plt.yticks(fontsize=10)
+plt.text(0.1, 0.9, "B", transform=ax12.transAxes, fontsize=15)
+plt.tight_layout()
+plt.savefig('fig1_points_and_error.png')
 
 
 ##### Cave array points
