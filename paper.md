@@ -51,7 +51,7 @@ localisation error with a commonly used array system. In Example 2, I show how `
 The tristar60 array is a commonly used array geometry [@Hugel2017;@Lewanzik2018] with 4 microphones in a plane on an inverted T array. Three peripheral microphones are placed 120$^{\circ}$ to
 each other at 60 cm distance from the central mic on this inverted T-array. The output WAV files from `tacost` were run through the TOADSuite package [@holger_toadsuite_manual;@toadsuite_peterstilz], a 
 software package that localises sounds using the time-of-arrival-differences across channels. \autoref{Figure 1} shows the localisation accuracy map 
-for the tristar60 microphone array. It can be seen that localisation error increases with increasing radial distance from the central microphone. 
+for the tristar60 microphone array. It can be seen that localisation error increases with increasing radial distance from the central microphone, and remains $\leq$10$%$ of the radial distance. 
 
 ![Localisation accuracy of a tristar60 array localised with time-of-arrival-differences. A) The line-connected points (blue) represent the tristar60 microphone array,
  while the free-standing points (orange) are  the simulated emission points which form a 'calibration grid' B) The localisation error increases with increasing radial distance of source from the central microphone. The error's range between 0-14m.\label{Figure 1}](data_for_figures/analysis/fig1_points_and_error.png)
@@ -69,6 +69,13 @@ and 2) type of signal. The resulting accuracy map reveals that overall, the loca
 the remaining 7 mics are placed on the walls of the cave. The free-standing points (orange) are  the simulated emission points which form a 'calibration grid' B) The distribution of localisation error. The error is 
 the euclidean distance between the predicted and simulated point. The localisation error is between 0.07-0.32 m for the given points. \label{Figure 2}](data_for_figures/analysis/fig2_points_and_error.png)
 
+# Future directions
+`tacost` as it stands is currently written to implement first-order assessment of a tracking system's accuracy. The package has been primarily written keeping acoustic signals propagating through air where the velocity of 
+sound is assumed to be constant. It may thus also be used to test tracking in radar or underwater sonar systems, contingent on how uniform the medium of wave propagation is over the distances being studied. As of version 0.1.0
+straight line propagation of signals are simulated, without radial propagation or atmospheric/medium absorption implemented. Future releases may include such propagation losses. Another important aspect affecting all tracking systems 
+is the directionality of the sensors (microphones) and emitted signals (animal vocalisations, calibration speakers). A common problem in acoustic tracking with bats and cetaceans is not being able to track animals because their echolocation calls can 
+be very directional [@Matsuta2013;@Surlykke2012;@Koblitz2016]. Implementing sensor and source sound directionality will help assessing how many microphones might be required to successfully track animals in their surroundings, and which array geometries are 
+best able to do so. 
 
 # Acknowledgements
 This work was supported by a doctoral fellowship from the German Academic Exchange Service (DAAD) and the International Max Planck Research School for Organismal Biology. 
