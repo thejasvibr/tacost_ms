@@ -10,7 +10,7 @@ Created on Thu Jun 11 14:08:53 2020
 
 Acknowledgements
 ---------------
-Thanks to Lena De Framond for running the simulated audio files on TOADSuite.
+Thanks to Lena De Framond for running the simulated audio files on TOADSuite!
 
 @author: tbeleyur
 """
@@ -37,36 +37,39 @@ def draw_mic_array(mic_xyz, draw_axis):
     return draw_axis
         
 
-#### Tristar points
+#### Tristar points  ##########################################################
 # load the simulated points:
-tristar_point = pd.read_csv('../tristar_source_positions.csv')
+tristar_point_raw = pd.read_csv('../tristar_source_positions.csv')
 # load the obtained output
-toadsuite_out = pd.read_excel('../toadsuite_results/RES_fig1_tristar.xlsx', sheet_name='0000001_001')
+toadsuite_out = pd.read_excel('../toadsuite_results/CORRECTED_RES_fig1_tristar.xlsx', sheet_name='0000001_001')
 toadsuite_xyz = toadsuite_out.iloc[3:,[15,16,17]].copy()
 
 #remove last point bcos for some reason the TOADSuite output doesn't have the last point??!
-tristar_points_part = tristar_point.to_numpy()[:-1,:]
-toadsuite_points = toadsuite_xyz.to_numpy()
+tristar_points = tristar_point_raw.to_numpy()
+toadsuite_points = np.float64(toadsuite_xyz.to_numpy())
 
-tristar_diff = np.abs(tristar_points_part - toadsuite_points)
+tristar_diff = np.abs(tristar_points - toadsuite_points)
 tristar_euclidean_error = np.apply_along_axis(calculate_euclidean_error, 1, tristar_diff)
 
-points_and_error = np.column_stack((tristar_points_part, tristar_euclidean_error))
-
+points_and_error = np.column_stack((tristar_points, tristar_euclidean_error))
+all_data = np.column_stack((toadsuite_points, points_and_error))
+pd.DataFrame(data=all_data, columns=['toadsuite_x','toadsuite_y','toadsuite_z',
+                                     'actual_x', 'actual_y','actual_z',
+                                     'toadsuite_error']).to_csv('all_data.csv')
 
 trist_norm_error = (tristar_euclidean_error+0.01)/(np.min(tristar_euclidean_error)+0.01)
 
 plt.figure(figsize=(10,4))
 ax0 = plt.subplot(121,projection='3d')
 ax0.view_init(elev=32., azim=-62)
-ax0.scatter(tristar_points_part[:,0], tristar_points_part[:,1], tristar_points_part[:,2],
+ax0.scatter(tristar_points[:,0], tristar_points[:,1], tristar_points[:,2],
                                                 '*', s=trist_norm_error*0.2)
 ax0.scatter(standard_tristar[:,0],standard_tristar[:,1],standard_tristar[:,2],marker=11)
 draw_mic_array(standard_tristar, ax0)
 ax0.text2D(0.1, 0.9, "A", transform=ax0.transAxes, fontsize=15)
 plt.tight_layout()
 
-dist_from_central_mic = [scipy.spatial.distance.euclidean(each, [0,0,0]) for each in tristar_points_part]
+dist_from_central_mic = [scipy.spatial.distance.euclidean(each, [0,0,0]) for each in tristar_points]
 # radial distance - error plot 
 ax12 = plt.subplot(122)
 plt.plot(dist_from_central_mic, points_and_error[:,-1],'*')
@@ -77,7 +80,7 @@ plt.tight_layout()
 plt.savefig('fig1_points_and_error.png')
 
 
-##### Cave array points
+##### Cave array points ##########################################################
 cave_points = pd.read_csv('../cave_source_positions.csv')
 toadsuite_cave = pd.read_excel('../toadsuite_results/RES_fig2_cave.xlsx', sheet_name='0000002_001')
 toadsuite_cave_xyz = toadsuite_cave.iloc[3:,[15,16,17]].copy()
