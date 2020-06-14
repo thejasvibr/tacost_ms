@@ -6,6 +6,7 @@ tags:
   - bioacoustics
   - sound
   - acoustic tracking
+  - echolocation
 authors:
   - name: Thejasvi Beleyur
     orcid: 0000-0001-5360-4383
@@ -14,7 +15,7 @@ authors:
 affiliations:
  - name: Acoustic and Functional Ecology, Max Planck Institute for Ornithology, Seewiesen, Germany
    index: 1
-date: 07 June 2020
+date: 14 June 2020
 bibliography: references.bib
 ---
 
@@ -42,10 +43,10 @@ Through the parameter file the user can define the emitted sound, positions, int
 # Examples
 
 A microphone array's localisation accuracy may not be uniform over 3D space [@aubauer1996acoustical;@Wahlberg1999]. This accuracy is independent of the actual signal and recording conditions of the input data, but rather dependent on the mathematical formulations and array geometry used to calculate source sound position.
-While the accuracy of a few microphone array configurations have been characterised [@aubauer1996acoustical;@Wahlberg1999], the characterisation of an array's accuracy is a manually-intensive task.
-The intrinsic accuracy of arrays can be relatively quickly characterised by the use of audio files with simulated emission points spread across the recording volume of interest. 
+The accuracy of a few microphone array configurations can be characterised analytically[@aubauer1996acoustical] and experimentally[@Wahlberg1999]. While reflecting the system's underlying capabilities, analytical 
+and experimental characterisations are often time-intensive. In contrast, simulation uncovers the intrinsic accuracy of array relatively quickly through the use of audio files with simulated emission points spread across the recording volume of interest. 
 'tacost' can be used to characterise the maximal localisation accuracy of an acoustic tracking system with novel array geometries and recording scenarios. In Example 1, I show how `tacost` can be used to verify known trends in 
-localisation error with a commonly used array system. In Example 2, I show how `tacost` can be used to estimate the expected localisation error in a microphone array with less-constrained geometry.
+localisation error with a commonly used array system. In Example 2, I show how `tacost` can be used to estimate the expected localisation error in a microphone array with a nvoel and field-friendly geometry.
 
 ## 1. Localisation accuracy of the tristar60 system
 The tristar60 array is a commonly used array geometry [@Hugel2017;@Lewanzik2018] with 4 microphones in a plane on an inverted T array. Three peripheral microphones are placed 120$^{\circ}$ to
@@ -54,7 +55,8 @@ software package that localises sounds using the time-of-arrival-differences acr
 for the tristar60 microphone array. It can be seen that localisation error increases with increasing radial distance from the central microphone, and remains <10% of the radial distance. 
 
 ![Localisation accuracy of a tristar60 array localised with time-of-arrival-differences. A) The line-connected points (blue) represent the tristar60 microphone array,
- while the free-standing points (orange) are  the simulated emission points which form a 'calibration grid' B) The localisation error increases with increasing radial distance of source from the central microphone. The error's range between 0-14m.\label{Figure 1}](data_for_figures/analysis/fig1_points_and_error.png)
+ while the free-standing points (orange) are  the simulated emission points which form a 'calibration grid' B) The localisation error increases with increasing radial distance of source from the central microphone.
+Each simulated point is shown as a dot, and the size of the dot is proportional to the tracking error. The errors range between 0-14m.\label{Figure 1}](data_for_figures/analysis/fig1_points_and_error.png)
 
 
 ## 2. Localisation accuracy of a multi-microphone array in the field 
@@ -67,7 +69,7 @@ and 2) type of signal. The resulting accuracy map reveals that overall, the loca
 
 ![Localisation accuracy of a multi-microphone array in the field, localised with time-of-arrival-differences. A) The line-connected points (blue) represent the microphone array consisting of 11 microphones. Four microphones are in a tristar 120 array (tristar array with 120cm radial distance from central mic), and 
 the remaining 7 mics are placed on the walls of the cave. The free-standing points (orange) are  the simulated emission points which form a 'calibration grid' B) The distribution of localisation error. The error is 
-the euclidean distance between the predicted and simulated point. The localisation error is between 0.07-0.32 m for the given points. \label{Figure 2}](data_for_figures/analysis/fig2_points_and_error.png)
+the euclidean distance between the predicted and simulated point. Each simulated point is shown as a dot, and the size of the dot is proportional to the tracking error. The localisation error is between 0.07-0.32 m for the given points. \label{Figure 2}](data_for_figures/analysis/fig2_points_and_error.png)
 
 # Future directions
 `tacost` as it stands is currently written to implement first-order assessment of a tracking system's accuracy. The package has been primarily written keeping acoustic signals propagating through air where the velocity of 
@@ -79,6 +81,7 @@ best able to do so.
 
 # Acknowledgements
 This work was supported by a doctoral fellowship from the German Academic Exchange Service (DAAD) and the International Max Planck Research School for Organismal Biology. 
-I would like to thank Lena De Framond for generating the acoustic localisation output, Holger R Goerlitz for helpful discussions and the IT team at the Max-Planck Institute for Ornithology for their support. 
+I would like to thank Lena De Framond for generating the acoustic localisation output, Holger R Goerlitz for helpful discussions on the topic of tracking, and the IT team at
+the Max-Planck Institute for Ornithology for their support. 
 
 # References
