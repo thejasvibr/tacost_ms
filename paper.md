@@ -51,7 +51,7 @@ localisation error with a commonly used array system. In Example 2, I show how `
 The tristar60 array is a commonly used array geometry [@Hugel2017;@Lewanzik2018] with 4 microphones in a plane on an inverted T array. Three peripheral microphones are placed 120$^{\circ}$ to
 each other at 60 cm distance from the central mic on this inverted T-array. The output WAV files from `tacost` were run through the TOADSuite package [@holger_toadsuite_manual;@toadsuite_peterstilz], a 
 software package that localises sounds using the time-of-arrival-differences across channels. \autoref{Figure 1} shows the localisation accuracy map 
-for the tristar60 microphone array. It can be seen that localisation error increases with increasing radial distance from the central microphone, and remains $\leq$10$%$ of the radial distance. 
+for the tristar60 microphone array. It can be seen that localisation error increases with increasing radial distance from the central microphone, and remains <10% of the radial distance. 
 
 ![Localisation accuracy of a tristar60 array localised with time-of-arrival-differences. A) The line-connected points (blue) represent the tristar60 microphone array,
  while the free-standing points (orange) are  the simulated emission points which form a 'calibration grid' B) The localisation error increases with increasing radial distance of source from the central microphone. The error's range between 0-14m.\label{Figure 1}](data_for_figures/analysis/fig1_points_and_error.png)
